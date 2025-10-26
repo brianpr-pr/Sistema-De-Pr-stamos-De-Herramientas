@@ -1,3 +1,7 @@
+<?php 
+include "./controlador/";
+include "./validaciones/"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +10,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h2>Gestor de prestamos de herramientas</h2>
-    <a href="./herramientas.php">Usuarios</a>
-    <a href="./prestamos.php">Prestamos</a>
-    <a href="./usuarios.php">Herramientas</a>
+
 </body>
 </html>

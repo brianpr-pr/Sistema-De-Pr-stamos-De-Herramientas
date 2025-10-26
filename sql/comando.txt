@@ -1,0 +1,4 @@
+Ejecutar en terminal de XAMPP desde el directorio ./sql
+el siguiente comando:
+
+ mysql -u nombreUsuario < crear.sql

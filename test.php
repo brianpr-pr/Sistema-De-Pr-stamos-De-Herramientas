@@ -7,6 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <?php insertarHerramienta("Ronaldo","adffsf@gmail.com","5", "5"); ?>
+    <table>
+        <?php echo mostrarTabla(); ?>
+    </table>
 </body>
 </html>

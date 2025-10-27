@@ -5,12 +5,7 @@ Crear: nombre y email.
 ●  Editar: modificar nombre y email. 
 ●  Borrar: solo si no tiene préstamos activos
 */
-
-function getPDO(){
-    $conn = new PDO('mysql:host=localhost;dbname=tools_db', "root", "");
-    $conn->setAttribute(PDO::ATTR_ERRMODE,true);
-    return $conn;
-}
+include "./controlador/conexion.php";
 
 function seleccionarUsuarios(){
     $conn = getPDO();
@@ -27,7 +22,6 @@ function mostrarTabla(){
         <tr>
             <td>{$fila['fullname']}</td>
             <td>{$fila ['email']}</td>
-            <td><button type='button'>Editar</button></td>
         </tr>
         ";
     }
@@ -48,4 +42,11 @@ function actualizarUsuario($antiguoNombre, $antiguoEmail, $nuevoNombre, $nuevoEm
     WHERE fullname=:antiguoFullname AND email=:antiguoEmail");
     $stmt->execute(["nuevoFullname" => $nuevoNombre, "nuevoEmail" => $nuevoEmail,
 "antiguoFullname" => $antiguoNombre, "antiguoEmail" => $antiguoEmail]);
+}
+
+function eliminarUsuario($nombre, $email){
+    $conn = getPDO();
+    $stmt = $conn->prepare("DELETE FROM users 
+    WHERE fullname=:fullname AND email=:email");
+    $stmt->execute(["fullname" => $nombre, "email" => $email]);
 }

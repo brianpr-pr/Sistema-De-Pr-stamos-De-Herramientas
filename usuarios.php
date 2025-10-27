@@ -13,6 +13,8 @@ include "./validaciones/validacionUsuarios.php";
 <?php
 $mensajeInsertarUsuario = "";
 $mensajeActualizarUsuario = "";
+$mensajeEliminarUsuario = "";
+
     if($_SERVER['REQUEST_METHOD'] === "POST"){
         if(isset($_POST['nombre'], $_POST['email'])){
             insertarUsuario($_POST['nombre'], $_POST['email']);
@@ -20,8 +22,13 @@ $mensajeActualizarUsuario = "";
         }
 
         if(isset($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail'])){
-            actualizarusuario($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail']);
+            actualizarUsuario($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail']);
             $mensajeActualizarUsuario = "Usuario actualizado correctamente.";
+        }
+
+        if(isset($_POST['nombreEliminar'], $_POST['emailEliminar'])){
+            eliminarUsuario($_POST['nombreEliminar'], $_POST['emailEliminar']);
+            $mensajeEliminarUsuario = "Usuario ha sido eliminado correctamente en la base de datos.";
         }
 }
     ?>
@@ -64,6 +71,21 @@ $mensajeActualizarUsuario = "";
         <button type="submit">Enviar</button>
     </form>
     <?php echo "<br><h2>{$mensajeActualizarUsuario}</h2><br>"; ?>
+
+    
+    <br>
+    <form method="POST">
+        <h2>Eliminar usuario</h2>
+        <label for="nombreEliminar">Nombre de usuario</label>
+        <input type="text" id="nombreEliminar" name="nombreEliminar">
+        <br><br>
+        <label for="emailEliminar">Email de usuario</label>
+        <input type="text" id="emailEliminar" name="emailEliminar">
+        <br><br>
+        <button type="submit">Enviar</button>
+        <button type="reset">Cancelar</button>
+    </form>
+    <?php echo "<br><h2>{$mensajeEliminarUsuario }</h2><br>"; ?>
 
 </body>
 </html>

@@ -1,1 +1,2 @@
-Me quede en la parte de actualizar datos de usuarios en usuariosControlador.php
+Seguir trabajando en CRUD para herramietnas me quede en hacer select para mostrar datos por
+    tabla

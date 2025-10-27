@@ -1,6 +1,6 @@
 <?php 
-include "./controlador/";
-include "./validaciones/"; 
+include "./controlador/herramientasControlador.php";
+include "./validaciones/validacionHerramientas.php"; 
 ?>
 <!DOCTYPE html>
 <html lang="en">

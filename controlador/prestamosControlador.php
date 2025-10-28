@@ -28,7 +28,8 @@ function mostrarTabla(){
     $tabla = seleccionarPrestamos();
     $resultado = "";
     foreach($tabla as $fila){
-        $resultado .=  "
+        $resultado .=  
+        "
         <tr>
             <td>{$fila['tool_id']}</td>
             <td>{$fila['user_id']}</td>

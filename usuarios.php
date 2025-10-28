@@ -15,23 +15,23 @@ $mensajeInsertarUsuario = "";
 $mensajeActualizarUsuario = "";
 $mensajeEliminarUsuario = "";
 
-    if($_SERVER['REQUEST_METHOD'] === "POST"){
-        if(isset($_POST['nombre'], $_POST['email'])){
-            insertarUsuario($_POST['nombre'], $_POST['email']);
-            $mensajeInsertarUsuario = "Usuario ha sido insertado correctamente en la base de datos.";
-        }
+if($_SERVER['REQUEST_METHOD'] === "POST"){
+    if(isset($_POST['nombre'], $_POST['email'])){
+        insertarUsuario($_POST['nombre'], $_POST['email']);
+        $mensajeInsertarUsuario = "Usuario ha sido insertado correctamente en la base de datos.";
+    }
 
-        if(isset($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail'])){
-            actualizarUsuario($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail']);
-            $mensajeActualizarUsuario = "Usuario actualizado correctamente.";
-        }
+    if(isset($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail'])){
+        actualizarUsuario($_POST['antiguoNombre'], $_POST['antiguoEmail'],$_POST['nuevoNombre'], $_POST['nuevoEmail']);
+        $mensajeActualizarUsuario = "Usuario actualizado correctamente.";
+    }
 
-        if(isset($_POST['nombreEliminar'], $_POST['emailEliminar'])){
-            eliminarUsuario($_POST['nombreEliminar'], $_POST['emailEliminar']);
-            $mensajeEliminarUsuario = "Usuario ha sido eliminado correctamente en la base de datos.";
-        }
+    if(isset($_POST['nombreEliminar'], $_POST['emailEliminar'])){
+        eliminarUsuario($_POST['nombreEliminar'], $_POST['emailEliminar']);
+        $mensajeEliminarUsuario = "Usuario ha sido eliminado correctamente en la base de datos.";
+    }
 }
-    ?>
+?>
 <body>
     <br>
     <form method="POST">
@@ -47,8 +47,8 @@ $mensajeEliminarUsuario = "";
 
     <table>
         <tr>
-        <th>Nombre</th>
-        <th>Email</th>
+            <th>Nombre</th>
+            <th>Email</th>
         </tr>
         <?php echo mostrarTabla();?>
     </table>

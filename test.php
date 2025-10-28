@@ -1,4 +1,4 @@
-<?php include "./controlador/herramientasControlador.php";?>
+<?php include "./controlador/prestamosControlador.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body>
     <table>
-        <?php echo mostrarTabla(); ?>
+        <?php actualizarPrestamo("2", "2")?>
     </table>
 </body>
 </html>
